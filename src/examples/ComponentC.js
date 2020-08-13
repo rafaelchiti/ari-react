@@ -46,14 +46,14 @@ class ComponentCClass extends React.Component {
     );
   }
 
-  getRandomDatoCurioso() {
+  getRandomDatoCurioso = () => {
     if (this.state.datosCuriosos.length > 0) {
       const randomNumber = Math.floor(Math.random() * 100);
       return this.state.datosCuriosos[randomNumber].text;
     } else {
       return null;
     }
-  }
+  };
 }
 
 export { ComponentCClass };
@@ -72,14 +72,14 @@ const ComponentCFunctional = () => {
       });
   }, []);
 
-  const getRandomDatoCurioso = () => {
+  const getRandomDatoCurioso = React.useCallback(() => {
     if (datosCuriosos.length > 0) {
       const randomNumber = Math.floor(Math.random() * 100);
       return datosCuriosos[randomNumber].text;
     } else {
       return null;
     }
-  };
+  }, [datosCuriosos]);
 
   return (
     <div>
@@ -88,8 +88,8 @@ const ComponentCFunctional = () => {
         una api de datos curiosos sobre gatos. Una vez que la llamada
         'asincronica' (osea promise) termina, entonces voy a hacer setState(),
         que en componentes funcionales es un poquito distinto, en este caso lo
-        nombramos `setDatosCuriosos` para que mi componente se actualice. Una vez
-        que se actualiza deberian ver aqui debajo 👇 un dato curioso sobre
+        nombramos `setDatosCuriosos` para que mi componente se actualice. Una
+        vez que se actualiza deberian ver aqui debajo 👇 un dato curioso sobre
         gatos. Que lo obtenemos de `this.state`.
       </p>
       <Box padding="2" backgroundColor="highlight">
