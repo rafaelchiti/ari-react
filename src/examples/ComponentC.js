@@ -84,11 +84,13 @@ const ComponentCFunctional = () => {
   return (
     <div>
       <p>
-        Soy un component de clase. Cuando me monto llamo a una api de datos
-        curiosos sobre gatos. Una vez que la llamada 'asincronica' (osea
-        promise) termina, entonces voy a hacer setState() para que mi componente
-        se actualice. Una vez que se actualiza deberian ver aqui debajo 👇 un
-        dato curioso sobre gatos. Que lo obtenemos de `this.state`.
+        Soy un component funcional. Cuando me renderizo por primera vez llamo a
+        una api de datos curiosos sobre gatos. Una vez que la llamada
+        'asincronica' (osea promise) termina, entonces voy a hacer setState(),
+        que en componentes funcionales es un poquito distinto, en este caso lo
+        nombramos `setDatosCuriosos` para que mi componente se actualice. Una vez
+        que se actualiza deberian ver aqui debajo 👇 un dato curioso sobre
+        gatos. Que lo obtenemos de `this.state`.
       </p>
       <Box padding="2" backgroundColor="highlight">
         {getRandomDatoCurioso()}
