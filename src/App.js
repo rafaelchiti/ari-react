@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { ComponentAClass, ComponentAFunctional } from "./examples/ComponentA";
 import { ComponentBClass, ComponentBFunctional } from "./examples/ComponentB";
+import { ComponentCClass, ComponentCFunctional } from "./examples/ComponentC";
 import Box from "./Box";
 import { ThemeProvider } from "theme-ui";
 import theme from "./theme";
@@ -23,6 +24,8 @@ export default function () {
             <MyLink to="/component-a-functional">Component A functional</MyLink>
             <MyLink to="/component-b-class">Component B class</MyLink>
             <MyLink to="/component-b-functional">Component B functional</MyLink>
+            <MyLink to="/component-c-class">Component C class</MyLink>
+            <MyLink to="/component-c-functional">Component C functional</MyLink>
           </Box>
           <Box
             marginTop="10px"
@@ -46,6 +49,12 @@ export default function () {
               </Route>
               <Route path="/component-b-functional">
                 <ComponentBFunctional />
+              </Route>
+              <Route path="/component-c-class">
+                <ComponentCClass />
+              </Route>
+              <Route path="/component-c-functional">
+                <ComponentCFunctional />
               </Route>
               <Route path="/">
                 Haz click en algun ejemplo
